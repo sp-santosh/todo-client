@@ -6,11 +6,14 @@ const InputTodo = () => {
     e.preventDefault();
     try {
       const body = { description };
-      const response = await fetch("http://localhost:8080/todos", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(body),
-      });
+      const response = await fetch(
+        "postgresql://postgres:QsYpJCEzATVLCgFYr0hV@containers-us-west-33.railway.app:6290/railway/todos",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(body),
+        }
+      );
       window.location = "/";
     } catch (err) {
       console.error(err.message);
