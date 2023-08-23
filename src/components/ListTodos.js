@@ -9,9 +9,12 @@ const ListTodos = () => {
 
   const deleteTodo = async (id) => {
     try {
-      const deleteTodo = await fetch(`http://localhost:8080/todos/${id}`, {
-        method: "DELETE",
-      });
+      const deleteTodo = await fetch(
+        `https://todo-server-5ixg.onrender.com/todos/${id}`,
+        {
+          method: "DELETE",
+        }
+      );
 
       setTodos(todos.filter((todo) => todo.todo_id !== id));
     } catch (err) {
@@ -21,7 +24,9 @@ const ListTodos = () => {
 
   const getTodos = async () => {
     try {
-      const response = await fetch("http://localhost:8080/todos");
+      const response = await fetch(
+        "https://todo-server-5ixg.onrender.com/todos"
+      );
       const jsonData = await response.json();
 
       setTodos(jsonData);

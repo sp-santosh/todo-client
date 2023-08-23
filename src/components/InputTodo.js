@@ -7,7 +7,7 @@ const InputTodo = () => {
     try {
       const body = { description };
       const response = await fetch(
-        "postgresql://postgres:QsYpJCEzATVLCgFYr0hV@containers-us-west-33.railway.app:6290/railway/todos",
+        "https://todo-server-5ixg.onrender.com/todos",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

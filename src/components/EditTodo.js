@@ -8,7 +8,7 @@ function EditTodo({ todo }) {
     try {
       const body = { description };
       const reponse = await fetch(
-        `http://localhost:8080/todos/${todo.todo_id}`,
+        `https://todo-server-5ixg.onrender.com/todos/${todo.todo_id}`,
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
