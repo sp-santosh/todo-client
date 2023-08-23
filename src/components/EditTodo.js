@@ -7,7 +7,7 @@ function EditTodo({ todo }) {
     e.preventDefault();
     try {
       const body = { description };
-      const reponse = await fetch(
+      const response = await fetch(
         `https://todo-server-5ixg.onrender.com/todos/${todo.todo_id}`,
         {
           method: "PUT",
